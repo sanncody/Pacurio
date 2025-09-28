@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://peednascooldude:12345@cluster0.qqajo.mongodb.net/scatch");
-
 const userSchema = mongoose.Schema({
     username: String,
     profilePic: String,
