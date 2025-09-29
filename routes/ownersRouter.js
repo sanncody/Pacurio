@@ -10,7 +10,7 @@ const router = express.Router();
 if (process.env.NODE_ENV === 'development') {
     // We are creating this owner in development environment only
     router.post('/create', async (req, res) => {
-        const { username, email, password } = req.body;
+        const { fullname, email, password } = req.body;
 
         bcrypt.genSalt(16, (err, salt) => {
             bcrypt.hash(password, salt, async (err, hash) => {
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'development') {
                 if (owners.length > 0) return res.status(500).send("You don't have permission to create a new owner."); 
 
                 const createdOwner = await ownerModel.create({
-                    username,
+                    fullname,
                     email,
                     password: hash
                 });

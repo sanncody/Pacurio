@@ -1,4 +1,3 @@
 {
-    "MONGODB_URI": "mongodb+srv://peednascooldude:12345@cluster0.qqajo.mongodb.net",
-    "BCRYPT_SECRET": "SanSecret"
+    "MONGODB_URI": "mongodb+srv://peednascooldude:12345@cluster0.qqajo.mongodb.net"
 }
