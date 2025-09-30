@@ -11,12 +11,13 @@
                 <div class="container px-10 py-20 flex flex-grow">
                     <div class="w-[25%] flex h-screen flex-col items-start">
                         <div class="flex flex-col">
-                            <a class="block w-fit mb-2" href="/api/owners/admin/all-products">All Products</a>
-                            <a class="block w-fit mb-2" href="/api/owners/admin/create-products">Create new product</a>
+                            <a class="block w-fit mb-2 text-lg font-light tracking-tight hover:text-cyan-300" href="/api/owners/admin/all-products">All Products</a>
+                            <a class="block w-fit mb-2 text-lg font-light tracking-tight hover:text-cyan-300" href="/api/owners/admin/create-products">Create new product</a>
                         </div>
                     </div>
-                    <main class="w-3/4 p-8 shadow ml-4 bg-zinc-800 border-zinc-900 border-2 rounded-lg">
-                        <h2 class="text-3xl font-bold mb-5 text-blue-300">Create New Product</h2>
+                    <div class="min-h-screen w-[0.5px] bg-zinc-700 absolute left-[250px] top-[4.5rem]"></div>
+                    <main class="w-3/4 p-10 shadow bg-zinc-800 border-zinc-900 border-2 rounded-lg">
+                        <h2 class="text-3xl font-bold mb-10 text-blue-300">Create New Product</h2>
                         <form action="/api/products/create" method="post" enctype="multipart/form-data">
                             <div class="mb-6">
                                 <h3 class="text-lg font-semibold mb-2">Product Details</h3>

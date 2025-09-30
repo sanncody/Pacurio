@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const config = require('config');
 
 const ownerModel = require('../models/ownerModel');
+const productModel = require('../models/productModel');
 
 const router = express.Router();
 
@@ -33,8 +34,9 @@ router.get('/', (req, res) => {
     res.send("Welcome to Owner's Endpoint");
 });
 
-router.get('/admin/all-products', (req, res) => {
-    res.render('admin');
+router.get('/admin/all-products', async (req, res) => {
+    const products = await productModel.find();
+    res.render('admin', { products });
 });
 
 router.get('/admin/create-products', (req, res) => {
