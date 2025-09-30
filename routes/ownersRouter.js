@@ -33,5 +33,13 @@ router.get('/', (req, res) => {
     res.send("Welcome to Owner's Endpoint");
 });
 
+router.get('/admin/all-products', (req, res) => {
+    res.render('admin');
+});
+
+router.get('/admin/create-products', (req, res) => {
+    const flashRes = req.flash("Success");
+    res.render('createProducts', { flashRes });
+});
 
 module.exports = router;
