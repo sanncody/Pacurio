@@ -24,7 +24,7 @@ module.exports.registerUser = async (req, res) => {
 
                 const token = generateToken(createdUser);
                 res.cookie('token', token);
-                res.status(201).json({ message: "User is created successfully!!", createdUser });
+                res.redirect('/shop');
             });
         });
     } catch (error) {

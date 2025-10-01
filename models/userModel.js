@@ -5,7 +5,12 @@ const userSchema = mongoose.Schema({
     profilePic: String,
     email: String,
     password: String,
-    cart: [],
+    cart: [
+        {
+            type: mongoose.Schema.Types.ObjectId, // We have array of productIds here
+            ref: "product"
+        }
+    ],
     orders: [],
     contact: Number
 });

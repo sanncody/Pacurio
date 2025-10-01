@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacurio</title>
+    <link rel="icon" type="image" href="/images/pacurio-logo.jpg" />
+    <title>Pacurio: A Premium Bag Store</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -14,22 +15,24 @@
         class="w-full fixed top-0 left-0 px-6 py-4 flex items-center justify-between bg-zinc-800/80 backdrop-blur-lg shadow-md">
 
         <!-- Logo -->
-        <div class="text-2xl md:text-3xl font-bold text-purple-400">
-            <a href="/">Pacurio</a>
+        <div class="text-2xl md:text-3xl font-bold text-purple-400 flex items-center justify-center gap-3">
+            <img src="/images/pacurio-logo.jpg" alt="Pacurio-Logo" class="w-10 h-10 object-cover rounded-md">
+            <a href="/" class="">Pacurio</a>
         </div>
 
         <!-- Nav Links -->
-        <div class="hidden md:flex gap-6">
-            <a href="/" class="hover:text-purple-300 transition">Home</a>
-            <a href="/shop" class="hover:text-purple-300 transition">Shop</a>
-            <a href="/api/owners/admin/all-products" class="hover:text-purple-300 transition">Owner Store</a>
-        </div>
-
-        <!-- Mobile Menu Icon -->
-        <button class="md:hidden text-2xl">
-            <i class="ri-menu-line"></i>
-        </button>
+        <% var loggedIn = typeof loggedIn !== "undefined" ? loggedIn : true %>
+        <% if (loggedIn) { %>
+            <div class="hidden md:flex gap-6">
+                <a href="/shop" class="hover:text-purple-300 transition">Shop</a>
+                <a href="/cart" class="hover:text-purple-300 transition">Cart</a>
+                <a href="/api/owners/admin" class="hover:text-purple-300">Admin</a>
+                <a href="/api/users/logout" class="text-red-600">Logout</a>
+            </div>
+            
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-2xl">
+                <i class="ri-menu-line"></i>
+            </button>
+        <% } %>
     </nav>
-
-    <!-- Push content down (since navbar is fixed) -->
-    <!-- <div class="pt-20"></div> -->
